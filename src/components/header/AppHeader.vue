@@ -1,7 +1,7 @@
 <template>
    <header>
-    <div>
-        <img src="./assets/img/Logo yu-gi-oh.png" alt="">
+    <div class="d-flex p-2">
+        <img src="../../assets/img/Logo yu-gi-oh.png" alt="logo yu-gi-oh" width="10%">
 
         <h1>yu-gi-oh api</h1>
     </div>
@@ -9,6 +9,9 @@
 </template>
 
 <script>
+    export default {
+    name: 'AppHeader',
+    }
 
 </script>
 
@@ -17,8 +20,10 @@
 header{
     background-color: white;
 
+
     h1{
         text-transform: capitalize;
+        padding-left: 10px;
     }
 }
 

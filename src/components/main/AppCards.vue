@@ -1,0 +1,42 @@
+<template>
+    <div id="cards" class="d-flex flex-column">
+        <div>
+            <img :src="propsSrc" alt="" height="100%" width="100%">
+        </div>
+        <div class="d-flex flex-column align-items-center p-4">
+            <h5>{{ propsTitolo }}</h5>
+            <span >{{ propsArchetype }}</span>
+        </div>
+
+    </div>
+</template>
+
+<script>
+export default {
+    name: "AppCards",
+    props: {
+        propsSrc: String,
+        propsTitolo: String,
+        propsArchetype: String,
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+
+
+#cards{
+    background-color:rgb(212,143,55) ;
+    flex-basis: calc(100% / 5 - 20px);
+
+    h5{
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+}
+}
+
+
+
+</style>

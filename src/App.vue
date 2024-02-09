@@ -1,17 +1,60 @@
 <template>
-  <AppHeader/>
+
+  <header>
+    <AppHeader/>
+  </header>
+
+
+  <main>
+    <AppMain/>
+  </main>
+
 </template>
 
 <script>
 // Definizione delle opzioni del componente
 // import HelloWorld from './components/HelloWorld.vue'; esempio di importazioni di un componente 
 import AppHeader from '../src/components/header/AppHeader.vue'
+import AppMain from '../src/components/main/AppMain.vue'
+import AppCards from '../src/components/main/AppCards.vue'
+
+
+// importazione file store.js
+import { store } from './store'
+
+// importazione  axisos
+import axios from 'axios'
 
 //inserimento tag creazione componenti 
 export default {
 
   components: {
     AppHeader,
+    AppMain,
+    AppCards,
+  },
+  data(){
+    return{
+      store
+    }
+
+  },
+  methods: {
+
+    getApi(){
+
+      axios.get(store.apiUrl)
+      .then( res => {
+        console.log(res.data)
+
+        store.charactersList = res.data
+
+      })
+    }
+  },
+
+  mounted(){
+    this.getApi()
   }
 
 }
