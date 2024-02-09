@@ -1,22 +1,19 @@
 <template>
- <!-- Contenuto del componente radice -->
-
- <!-- <HelloWorld/> tag inserito nel template per richimare il componente e visualizzarlo nel dom  -->
-
+  <AppHeader/>
 </template>
 
 <script>
 // Definizione delle opzioni del componente
 // import HelloWorld from './components/HelloWorld.vue'; esempio di importazioni di un componente 
-
+import AppHeader from '../src/components/header/AppHeader.vue'
 
 //inserimento tag creazione componenti 
 export default {
 
-  components : {
-    // HelloWorld //esempio di richiamo del componente all'iterno di components
-}
-  
+  components: {
+    AppHeader,
+  }
+
 }
 
 </script>
