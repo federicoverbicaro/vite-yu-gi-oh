@@ -19,6 +19,7 @@ import AppMain from '../src/components/main/AppMain.vue'
 import AppCards from '../src/components/main/AppCards.vue'
 
 
+
 // importazione file store.js
 import { store } from './store'
 
@@ -32,6 +33,7 @@ export default {
     AppHeader,
     AppMain,
     AppCards,
+    
   },
   data(){
     return{
@@ -50,11 +52,21 @@ export default {
         store.charactersList = res.data
 
       })
+    },
+
+    getApiType(){
+      axios.get(store.ApiArctypeCard)
+      .then( res => {
+        
+
+        store.ArrayArctypeCard = res.data
+      })
     }
   },
 
   mounted(){
-    this.getApi()
+    this.getApi();
+    this.getApiType();
   }
 
 }

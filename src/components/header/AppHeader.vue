@@ -22,6 +22,8 @@ header{
 
 
     h1{
+        display: flex;
+        align-items: center;
         text-transform: capitalize;
         padding-left: 10px;
     }

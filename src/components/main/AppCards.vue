@@ -5,9 +5,9 @@
         </div>
         <div class="d-flex flex-column align-items-center p-4">
             <h5>{{ propsTitolo }}</h5>
-            <span >{{ propsArchetype }}</span>
+            <span class="p-2" >{{ propsArchetype }}</span>
         </div>
-
+        
     </div>
 </template>
 

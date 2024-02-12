@@ -1,19 +1,16 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-2 pt-3 ">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Alien</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
+            <div class="col-3 pt-3 ">
+               
+                    <SerchArctype />
+                
             </div>
         </div>
 
         <div id="colonna" class="border border-black mt-3">
             <div class="bg-black p-2 m-2 ">
-                <h2 class="text-white text-capitalize">found 15 cards</h2>
+                <h2 class="text-white text-capitalize">found cards</h2>
             </div>
 
             <div id="containerCards" class=" d-flex flex-wrap justify-content-center ">
@@ -30,13 +27,16 @@
 
 <script>
 import AppCards from './AppCards.vue'
+import SerchArctype from '../main/cards/SerchArctype.vue'
 import { store } from '../../store';
 
 export default {
     name: 'AppMain',
 
     components: {
-        AppCards
+        AppCards,
+        SerchArctype,
+
     },
 
     data() {
@@ -52,8 +52,8 @@ export default {
     background-color: white;
     padding: 20px;
 
-    #containerCards{
-    gap: 20px;
+    #containerCards {
+        gap: 20px;
     }
 }
 </style>
