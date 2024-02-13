@@ -1,14 +1,19 @@
 <template>
-
   <header>
-    <AppHeader/>
+    <AppHeader />
   </header>
 
 
   <main>
-    <AppMain/>
-  </main>
+    <div class="container pt-3 ">
+            <div class="col-3 pt-3  ">
+                <SerchArctype @search="getApi" />
+            </div>
+        </div>
 
+    <AppMain />
+
+  </main>
 </template>
 
 <script>
@@ -17,7 +22,7 @@
 import AppHeader from '../src/components/header/AppHeader.vue'
 import AppMain from '../src/components/main/AppMain.vue'
 import AppCards from '../src/components/main/AppCards.vue'
-
+import SerchArctype from '../src/components/main/cards/SerchArctype.vue'
 
 
 // importazione file store.js
@@ -33,42 +38,43 @@ export default {
     AppHeader,
     AppMain,
     AppCards,
-    
+    SerchArctype,
+
   },
-  data(){
-    return{
+  data() {
+    return {
       store
     }
 
   },
   methods: {
+    
+    getApi() {
 
-    getApi(){
-
-      if(store.selezioneArctype){
+      if (store.selezioneArctype) {
         store.getApi += `&archetype=${store.selezioneArctype}`
       }
 
       axios.get(store.apiUrl)
-      .then( res => {
-        console.log(res.data)
+        .then(res => {
+          console.log(res.data)
 
-        store.charactersList = res.data
+          store.charactersList = res.data
 
-      })
+        })
     },
 
-    getApiType(){
+    getApiType() {
       axios.get(store.ApiArctypeCard)
-      .then( res => {
-        
+        .then(res => {
+
           console.log(res.data)
-        store.ArrayArctypeCard = res.data
-      })
+          store.ArrayArctypeCard = res.data
+        })
     }
   },
 
-  mounted(){
+  mounted() {
     this.getApi();
     this.getApiType();
   }
