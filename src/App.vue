@@ -58,7 +58,7 @@ export default {
       axios.get(store.ApiArctypeCard)
       .then( res => {
         
-
+          console.log(res.data)
         store.ArrayArctypeCard = res.data
       })
     }
