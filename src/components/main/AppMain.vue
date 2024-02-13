@@ -2,11 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-3 pt-3 ">
-                <select class="form-select" aria-label="Default select example">
-                    
-                   <SerchArctype/>
-                  
-                </select>
+                <SerchArctype />
             </div>
         </div>
 
@@ -44,7 +40,8 @@ export default {
         return {
             store
         }
-    }
+    },
+
 }
 </script>
 

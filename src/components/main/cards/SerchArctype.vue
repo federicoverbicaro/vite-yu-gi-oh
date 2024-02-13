@@ -1,10 +1,12 @@
 <template>
-    <option value="">Seleziona un arcotipo</option>
+    <select class="form-select" aria-label="Default select example" v-model="store.selezioneArctype" @change="$emit('Search')">
+        <option value="">Seleziona un arcotipo</option>
 
-    <option v-for="(element, index) in store.ArrayArctypeCard" :key="index">
-        {{ element.archetype_name }}
-    </option>
-
+        <option v-for="(element, index) in store.ArrayArctypeCard" :key="index"
+        :value="element.archetype_name">
+            {{ element.archetype_name }}
+        </option>
+    </select>
 </template>
 
 <script>
@@ -17,12 +19,11 @@ export default {
     data() {
         return {
             store,
+            
         }
     },
 
-    methods: {
-
-    }
+  
 }
 </script>
 

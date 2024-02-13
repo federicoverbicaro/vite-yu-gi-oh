@@ -6,7 +6,7 @@
 
 
   <main>
-    <AppMain/>
+    <AppMain @Search="getApi"/>
   </main>
 
 </template>
@@ -44,6 +44,10 @@ export default {
   methods: {
 
     getApi(){
+
+      if(store.selezioneArctype){
+        store.getApi += `&archetype=${store.selezioneArctype}`
+      }
 
       axios.get(store.apiUrl)
       .then( res => {
