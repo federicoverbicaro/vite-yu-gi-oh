@@ -6,7 +6,7 @@
 
 
   <main>
-    <AppMain @Search="getApi"/>
+    <AppMain/>
   </main>
 
 </template>

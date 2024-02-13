@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-3 pt-3 ">
-                <SerchArctype />
+                <SerchArctype @search="getApi"/>
             </div>
         </div>
 
