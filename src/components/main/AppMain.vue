@@ -1,9 +1,13 @@
 <template>
     <div class="container">
-       
         <div id="colonna" class="border border-black mt-3">
+
+            <div class="col-3 pt-3  ">
+                <SerchArctype @updateCards="updateCards"/>
+            </div>
+
             <div class="bg-black p-2 m-2 ">
-                <h2 class="text-white text-capitalize">found {{ }} cards</h2>
+                <h2 class="text-white text-capitalize">Arcatype Selezionato {{ store.selezioneArctype }}</h2>
             </div>
 
             <div id="containerCards" class=" d-flex flex-wrap justify-content-center ">
@@ -22,25 +26,61 @@
 
 import AppCards from './AppCards.vue'
 import { store } from '../../../src/store';
+import SerchArctype from './cards/SerchArctype.vue';
+
+// importazione  axisos
+import axios from 'axios'
+
+
+
 
 export default {
     name: 'AppMain',
     components: {
         AppCards,
-       
-
+        SerchArctype
     },
 
     data() {
         return {
-            store
+            store,
         }
     },
-  
+    methods: {
+    getApiType() {
+      axios.get(store.ApiArctypeCard)
+        .then(res => {
+          store.ArrayArctypeCard = res.data;
+          console.log('dati arcotipo', res.data);
+        })
+        .catch(error => {
+          console.error('Errore nel recupero dei dati arcotipo', error);
+        });
+    },
+    getApi() {
+      axios.get(store.apiUrl)
+        .then(res => {
+          store.charactersList = res.data;
+          console.log('dati apiUrl', res.data);
+        })
+        .catch(error => {
+          console.error('Errore nel recupero dei dati apiUrl', error);
+        });
+    },
+
+
+  },
+  mounted() {
+    this.getApi();
+    this.getApiType();
+    
+  }
 }
+
+
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 #colonna {
     background-color: white;
     padding: 20px;

@@ -18,7 +18,8 @@ export default {
         propsSrc: String,
         propsTitolo: String,
         propsArchetype: String,
-    }
+    },
+
 }
 </script>
 

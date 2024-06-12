@@ -2,7 +2,6 @@
    <header>
     <div class="d-flex p-2">
         <img src="../../assets/img/Logo yu-gi-oh.png" alt="logo yu-gi-oh" width="10%">
-
         <h1>yu-gi-oh api</h1>
     </div>
    </header>
