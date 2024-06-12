@@ -34,7 +34,7 @@ export default {
     AppMain,
 
   },
-  
+
   data() {
     return {
       store,
@@ -51,5 +51,6 @@ export default {
 
 
 <style lang="scss">
+
 /* Stili del componente radice */
 @use "../src/styles/general.scss" //collegamento a file general.scss per utilizzare styles</style>

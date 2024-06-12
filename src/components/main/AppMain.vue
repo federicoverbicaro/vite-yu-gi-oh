@@ -1,13 +1,13 @@
 <template>
-    <div class="container">
-        <div id="colonna" class="border border-black mt-3">
+    <div class="container ">
+        <div id="colonna" class="border border-black mt-3 overflow-scroll ">
 
             <div class="col-3 pt-3  ">
                 <SerchArctype @updateCards="updateCards"/>
             </div>
 
-            <div class="bg-black p-2 m-2 ">
-                <h2 class="text-white text-capitalize">Arcatype Selezionato {{ store.selezioneArctype }}</h2>
+            <div class="bg-red p-2 mt-2 mb-2">
+                <h2 class="text-white text-capitalize">Arcatype Selezionato  {{ store.selezioneArctype }}</h2>
             </div>
 
             <div id="containerCards" class=" d-flex flex-wrap justify-content-center ">
@@ -82,11 +82,15 @@ export default {
 
 <style lang="scss">
 #colonna {
-    background-color: white;
+    background-color:rgb(125,63,17) ;
     padding: 20px;
+    border-radius: 8px;
+    border: none;
+    height: 800px;
 
     #containerCards {
         gap: 20px;
     }
 }
+
 </style>

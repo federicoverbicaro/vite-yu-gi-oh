@@ -3,10 +3,10 @@
         <div>
             <img :src="propsSrc" alt="" height="100%" width="100%">
         </div>
-        <div class="d-flex flex-column align-items-center p-4 rounded-3">
+        <!-- <div class="d-flex flex-column align-items-center p-4 rounded-3">
             <h5>{{ propsTitolo }}</h5>
             <span class="p-2 text-center " >{{ propsArchetype }}</span>
-        </div>
+        </div> -->
         
     </div>
 </template>
